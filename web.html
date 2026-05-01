@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIL2NT H1LL // OSINT Framework</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="framework">
+    <div class="noise-overlay"></div>
+    <div class="scanlines"></div>
+    <div class="grid-overlay"></div>
+    
+    <div class="framework-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <div class="logo-icon"><img src="SILENT.jpg" height="80px" width="85px"></div>
+                    <h2>S1L2NT<br>H1LL</h2>
+                </div>
+                <div class="sidebar-status">
+                    <span class="status-dot active"></span>
+                    <span class="status-text">СИСТЕМА АКТИВНА</span>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <h3 class="nav-title"><i class="fas fa-crosshairs"></i> ИНСТРУМЕНТЫ</h3>
+                    <ul class="nav-links">
+                        <li><a href="#username" class="nav-link active"><i class="fas fa-user"></i> Username</a></li>
+                        <li><a href="#email" class="nav-link"><i class="fas fa-envelope"></i> Email</a></li>
+                        <li><a href="#domain" class="nav-link"><i class="fas fa-globe"></i> Domain</a></li>
+                        <li><a href="#image" class="nav-link"><i class="fas fa-image"></i> Image Analysis</a></li>
+                        <li><a href="#social" class="nav-link"><i class="fas fa-hashtag"></i> Social Media</a></li>
+                        <li><a href="#network" class="nav-link"><i class="fas fa-network-wired"></i> Network</a></li>
+                        <li><a href="#metadata" class="nav-link"><i class="fas fa-file-alt"></i> Metadata</a></li>
+                        <li><a href="#geolocation" class="nav-link"><i class="fas fa-map-marker-alt"></i> Geolocation</a></li>
+                    </ul>
+                </div>
+                
+                <div class="nav-section">
+                    <h3 class="nav-title"><i class="fas fa-shield-alt"></i> ЗАЩИТА</h3>
+                    <ul class="nav-links">
+                        <li><a href="#privacy" class="nav-link"><i class="fas fa-user-secret"></i> Privacy Check</a></li>
+                        <li><a href="#monitoring" class="nav-link"><i class="fas fa-eye"></i> Monitoring</a></li>
+                    </ul>
+                </div>
+                
+                <div class="nav-section">
+                    <h3 class="nav-title"><i class="fas fa-code"></i> ПРАКТИКА</h3>
+                    <ul class="nav-links">
+                        <li><a href="#cases" class="nav-link"><i class="fas fa-project-diagram"></i> Кейсы</a></li>
+                        <li><a href="#challenges" class="nav-link"><i class="fas fa-flag-checkered"></i> Челленджи</a></li>
+                    </ul>
+                </div>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <button class="cyber-button small" id="exportBtn">
+                    <i class="fas fa-download"></i> Экспорт карты
+                </button>
+                <div class="user-info">
+                    <div class="user-avatar">SH</div>
+                    <span class="user-name">Исследователь</span>
+                </div>
+            </div>
+        </aside>
+        
+        <main class="main-content">
+            <header class="main-header">
+                <div class="breadcrumb">
+                    <span class="breadcrumb-item">OSINT Framework</span>
+                    <span class="breadcrumb-divider">/</span>
+                    <span class="breadcrumb-item active" id="currentCategory">Username Search</span>
+                </div>
+                
+                <div class="header-actions">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Поиск инструмента..." id="toolSearch">
+                    </div>
+                    <button class="cyber-button" id="toggleView">
+                        <i class="fas fa-sitemap"></i> Карта
+                    </button>
+                </div>
+            </header>
+            
+            <section class="framework-content" id="frameworkContent">
+                <div class="framework-map" id="frameworkMap">
+                    <div class="map-container">
+                        <div class="map-node central" data-category="root">
+                            <div class="node-content">
+                                <div class="node-icon"><i class="fas fa-bullseye"></i></div>
+                                <h3 class="node-title">OSINT ЦЕЛЬ</h3>
+                                <p class="node-desc">Выберите точку начала расследования</p>
+                            </div>
+                            <div class="node-connections">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <aside class="tool-details" id="toolDetails">
+                    <div class="details-header">
+                        <h3><i class="fas fa-info-circle"></i> ДЕТАЛИ ИНСТРУМЕНТА</h3>
+                        <button class="close-details" id="closeDetails"><i class="fas fa-times"></i></button>
+                    </div>
+                    
+                    <div class="details-content">
+                        <div class="tool-header">
+                            <div class="tool-icon-large" id="detailIcon">🔍</div>
+                            <div>
+                                <h4 id="detailName">Выберите инструмент</h4>
+                                <span class="tool-category" id="detailCategory">-</span>
+                            </div>
+                        </div>
+                        
+                        <div class="tool-info-section">
+                            <h5><i class="fas fa-align-left"></i> ОПИСАНИЕ</h5>
+                            <p id="detailDescription">Выберите инструмент на карте для просмотра подробной информации о его назначении, использовании и методах защиты.</p>
+                        </div>
+                        
+                        <div class="tool-info-section">
+                            <h5><i class="fas fa-code"></i> ИСПОЛЬЗОВАНИЕ</h5>
+                            <div class="code-block" id="detailUsage">
+                                <code># Инструкция появится здесь</code>
+                            </div>
+                        </div>
+                        
+                        <div class="tool-info-section">
+                            <h5><i class="fas fa-shield-alt"></i> ЗАЩИТА ОТ ЭТОГО МЕТОДА</h5>
+                            <ul class="protection-list" id="detailProtection">
+                                <li>Выберите инструмент для просмотра рекомендаций по защите</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="tool-info-section">
+                            <h5><i class="fas fa-external-link-alt"></i> РЕСУРСЫ</h5>
+                            <div class="tool-links" id="detailLinks">
+                                <a href="#" class="resource-link disabled" target="_blank"><i class="fas fa-link"></i> Официальный сайт</a>
+                                <a href="#" class="resource-link disabled" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </section>
+            
+            <section class="practice-section">
+                <div class="cases-grid">
+                    <div class="case-card">
+                        <div class="case-difficulty beginner">ЛЕГКО</div>
+                        <h4>Поиск цифрового следа</h4>
+                        <p>Найдите всю доступную информацию о человеке по username</p>
+                        <div class="case-tools">
+                            <span class="tool-tag">Sherlock</span>
+                            <span class="tool-tag">WhatsMyName</span>
+                        </div>
+                        <button class="case-button" data-case="1">Начать кейс</button>
+                    </div>
+                    
+                    <div class="case-card">
+                        <div class="case-difficulty medium">СРЕДНЕ</div>
+                        <h4>Анализ домена компании</h4>
+                        <p>Проведите полную разведку целевого домена</p>
+                        <div class="case-tools">
+                            <span class="tool-tag">WHOIS</span>
+                            <span class="tool-tag">DNSDumpster</span>
+                            <span class="tool-tag">BuiltWith</span>
+                        </div>
+                        <button class="case-button" data-case="2">Начать кейс</button>
+                    </div>
+                    
+                    <div class="case-card">
+                        <div class="case-difficulty hard">СЛОЖНО</div>
+                        <h4>Полный цикл OSINT</h4>
+                        <p>От разведки до отчёта по реальному сценарию</p>
+                        <div class="case-tools">
+                            <span class="tool-tag">Hunter.io</span>
+                            <span class="tool-tag">Censys</span>
+                            <span class="tool-tag">Metagoofil</span>
+                        </div>
+                        <button class="case-button" data-case="3">Начать кейс</button>
+                    </div>
+                    
+                    <div class="case-card">
+                        <div class="case-difficulty medium">СРЕДНЕ</div>
+                        <h4>Анализ изображений</h4>
+                        <p>Расследование происхождения фотографии</p>
+                        <div class="case-tools">
+                            <span class="tool-tag">TinEye</span>
+                            <span class="tool-tag">EXIF Analysis</span>
+                            <span class="tool-tag">FotoForensics</span>
+                        </div>
+                        <button class="case-button" data-case="4">Начать кейс</button>
+                    </div>
+                    
+                    <div class="case-card">
+                        <div class="case-difficulty beginner">ЛЕГКО</div>
+                        <h4>Мониторинг следа</h4>
+                        <p>Настройка системы отслеживания упоминаний</p>
+                        <div class="case-tools">
+                            <span class="tool-tag">Google Alerts</span>
+                            <span class="tool-tag">Social Searcher</span>
+                            <span class="tool-tag">HIBP</span>
+                        </div>
+                        <button class="case-button" data-case="5">Начать кейс</button>
+                    </div>
+                </div>
+            </section>
+            
+            <footer class="main-footer">
+                <div class="footer-stats">
+                    <div class="stat">
+                        <span class="stat-number">27</span>
+                        <span class="stat-label">Инструментов</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">11</span>
+                        <span class="stat-label">Категорий</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">5</span>
+                        <span class="stat-label">Кейсов</span>
+                    </div>
+                </div>
+                <div class="footer-disclaimer">
+                    <p><i class="fas fa-exclamation-triangle"></i> Информация предоставлена в образовательных целях. Этичное использование обязательно.</p>
+                </div>
+            </footer>
+        </main>
+    </div>
+    
+    <div class="modal-overlay" id="caseModal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3><i class="fas fa-project-diagram"></i> ПРАКТИЧЕСКИЙ КЕЙС</h3>
+                <button class="modal-close" id="closeModal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-content" id="modalContent">
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

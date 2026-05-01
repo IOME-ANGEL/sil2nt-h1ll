@@ -1,0 +1,170 @@
+
+@font-face {
+    font-family: 'Nunito Sans';
+    src: url('fonts/NunitoSans-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Nunito Sans';
+    src: url('fonts/NunitoSans-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Nunito Sans';
+    src: url('fonts/NunitoSans-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+.Logo {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    gap: 15px;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 800;
+    animation: logoGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes logoGlow {
+    from {
+        text-shadow: 0 0 10px rgb(130, 26, 190), 0 0 15px rgb(130, 26, 190);
+    }
+    to {
+        text-shadow: 0 0 10px rgb(147, 11, 11), 0 0 20px rgb(147, 11, 11), 0 0 30px rgb(147, 11, 11);
+    }
+}
+
+body {
+    height: 100%;
+    margin: 0;
+}
+
+.main {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 0 0 5px rgb(130, 26, 190), 0 0 10px rgb(130, 26, 190), 0 0 20px rgb(130, 26, 190)
+}
+
+.htxt a {
+    text-align: center;
+    text-decoration: none;
+    list-style: none;
+    display: block;
+    background:rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(130, 26, 190, 0.3);
+    box-shadow: 
+        0 0 20px rgba(130, 26, 190, 0.3),
+        inset 0 0 20px rgba(130, 26, 190, 0.1);
+    padding: 13px 30px;
+    border-radius: 30px;
+    color: #fff;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 700;
+    text-shadow: 0 0 8px rgb(130, 26, 190);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.htxt a:hover {
+    box-shadow: 
+        0 0 30px rgba(190, 26, 26, 0.6),
+        inset 0 0 20px rgba(190, 26, 26, 0.2);
+    text-shadow: 
+        0 0 30px rgba(190, 26, 26, 0.6),
+        inset 0 0 20px rgba(190, 26, 26, 0.2);
+    transform: translateY(-2px);
+    
+}
+
+.htxt a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(103, 7, 7, 0.4),
+        transparent
+    );
+    transition: left 0.5s ease;
+}
+
+.htxt a:hover::before {
+    left: 100%;
+}
+
+.htxt {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    flex-direction: column;
+}
+.back {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background-color: #06030b; 
+    background-image:
+        linear-gradient(135deg, rgba(3, 1, 6, 0.98), rgba(8, 8, 35, 0.95), rgba(3, 1, 6, 0.98)),
+        radial-gradient(circle at 74% 36%, rgba(130, 26, 190, 0.2) 0%, rgba(130, 26, 190, 0.1) 10%, transparent 30%),
+        radial-gradient(circle at 30% 63%, rgba(100, 20, 150, 0.18) 0%, rgba(100, 20, 150, 0.08) 8%, transparent 30%);
+    background-blend-mode: screen, normal, normal, normal;
+    background-size: cover;
+    overflow: hidden;
+}
+
+
+.back::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: 
+        radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.95) 0.8px, transparent 1px),
+        radial-gradient(circle at 80% 15%, rgba(255, 255, 255, 0.9) 0.7px, transparent 1px),
+        radial-gradient(circle at 40% 70%, rgba(255, 255, 255, 0.85) 1px, transparent 1.1px),
+        radial-gradient(circle at 65% 45%, rgba(255, 255, 255, 0.9) 0.6px, transparent 1px),
+        radial-gradient(circle at 10% 85%, rgba(255, 255, 255, 0.8) 0.9px, transparent 1px),
+        radial-gradient(circle at 90% 60%, rgba(255, 255, 255, 0.95) 0.7px, transparent 1px),
+        radial-gradient(circle at 25% 40%, rgba(255, 255, 255, 0.8) 0.8px, transparent 1px),
+        radial-gradient(circle at 75% 25%, rgba(255, 255, 255, 0.9) 0.6px, transparent 1px),
+        radial-gradient(circle at 55% 80%, rgba(255, 255, 255, 0.85) 1px, transparent 1.1px),
+        radial-gradient(circle at 85% 90%, rgba(255, 255, 255, 0.8) 0.7px, transparent 1px),
+        radial-gradient(circle at 50% 25%, rgba(255, 255, 255, 0.9) 0.7px, transparent 1px),
+        radial-gradient(circle at 35% 15%, rgba(255, 255, 255, 0.85) 1px, transparent 1.1px);
+    opacity: 0.3;
+    mix-blend-mode: screen;
+    transform: translateZ(0);
+}
+
+.back::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(circle at 75% 35%, rgba(150, 40, 150, 0.08) 0%, transparent 25%),
+        radial-gradient(circle at 30% 65%, rgba(80, 30, 110, 0.06) 0%, transparent 25%);
+    opacity: 0.8;
+    filter: blur(18px);
+}
